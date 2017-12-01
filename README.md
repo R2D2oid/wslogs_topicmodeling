@@ -1,2 +1,2 @@
 # nlogs_topicmodeling
-network anomaly detection using topic models
+anomaly detection in hosted website logs using topic models
