@@ -1,0 +1,6 @@
+*.cfg
+*.pyc
+*.log
+output/*
+!*.template
+!*.sample
