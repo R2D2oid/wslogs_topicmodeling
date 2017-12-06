@@ -1,8 +1,8 @@
 import sys
 sys.path.append ('.')
 import unittest
-import lib.Utilities as utils
-from model.ApacheLogSchema import ApacheLogSchemaRaw, ApacheLog
+import lib.utilities as utils
+from model.apachelogschema import ApacheLogSchemaRaw, ApacheLog
 
 class TestUtilities (unittest.TestCase):
 	def test_flatten_nested_dct(self):
@@ -61,6 +61,13 @@ class TestUtilities (unittest.TestCase):
 		actual = ApacheLog.cleanselog(log)
 		expected = {}
 		self.assertEqual (actual, expected)
+
+	def test_to_dataframe (self):
+		data = utils.dataloader ('data/wslog.dat.template', ApacheLogSchemaRaw, ' ')
+		df = utils.to_dataframe (data)
+		expected_len = 20
+		actual_len = len (df)
+		self.assertEqual(actual_len, expected_len) 
 
 if __name__ == '__main__':
 	unittest.main()
