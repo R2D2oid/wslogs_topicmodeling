@@ -1,5 +1,6 @@
 import configparser
 from csv import reader
+import pandas as pd
 
 def flatten_nested_dct (dct):
 	''' flattens a nested dictionary. for example, a nested json which goes deeper than one layer '''
@@ -49,3 +50,8 @@ def dataloader (datapath, schema, delim = ' '):
 				d[k] = v
 			data.append(d)
  	return data
+
+def to_dataframe (data):
+	df = pd.DataFrame (data)
+	df = df.convert_objects (convert_numeric = True)
+	return df
