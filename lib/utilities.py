@@ -34,7 +34,18 @@ def configloader (configpath):
 	section['format'] = cp.get(tag, 'format')
 	section['level'] = cp.getint(tag, 'level')
 	config[tag] = section
-	
+
+	section = {}
+	tag = 'feat_extraction'
+	section['relevant_fields'] = list (cp.get (tag, 'relevant_fields').split (','))
+	section['tokenize_fields'] = list (cp.get (tag, 'tokenize_fields').split (','))
+	section['sizify_fields'] = list (cp.get (tag, 'sizify_fields').split (','))
+	section['rangify_fields'] = list (cp.get (tag, 'rangify_fields').split (','))
+	section['wordify_fields'] = list (cp.get (tag, 'wordify_fields').split (','))
+	section['entropy_fields'] = list (cp.get (tag, 'entropy_fields').split (','))
+	section['invalid_words'] = list (cp.get (tag, 'invalid_words').split (','))
+	config[tag] = section
+
 	return config
 
 def dataloader (datapath, schema, delim = ' '):
