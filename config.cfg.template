@@ -5,5 +5,14 @@ var = value
 logfile = logs/logfile_{}.log
 format = %(asctime)s - %(name)s - %(levelname)s - %(message)s
 # levels: NOTSET = 0 | DEBUG = 10 | INFO = 20 | WARNING = 30 | ERROR = 40 | CRITICAL = 50
-level = 10
+level = 30
+
+[feat_extraction]
+relevant_fields = ip,user_ident,user_http,ts,ms,request_method,request_resource,request_protocol,response_code,bytes_out,referrer,user_agent
+wordify_fields = http_method,user_ident,user_http,response_code
+rangify_fields = bytes_out 
+sizify_fields = request_resource,referrer
+tokenize_fields = request_protocol,user_agent,request_resource,referrer
+entropy_fields = user_agent,request_resource,referrer
+invalid_words = http,https,-,_,_-
 
