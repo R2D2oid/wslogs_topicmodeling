@@ -1,6 +1,6 @@
 import logging
 
-class ApacheLogSchemaRaw:
+class ApacheLogSchemaRaw (object):
 	ip = 'ip'
 	user_ident = 'user_ident'
 	user_http = 'user_http'
@@ -16,7 +16,7 @@ class ApacheLogSchemaRaw:
 	def list_members():
 		return ['ip', 'user_ident', 'user_http', 'ts', 'ms', 'request', 'response_code', 'bytes_out', 'referrer', 'user_agent']
 	
-class ApacheLogSchema:
+class ApacheLogSchema (object):
 	ip = ApacheLogSchemaRaw.ip
 	user_ident = ApacheLogSchemaRaw.user_ident
 	user_http = ApacheLogSchemaRaw.user_http
@@ -34,7 +34,7 @@ class ApacheLogSchema:
 	def list_members():
 		return ['ip', 'user_ident', 'user_http', 'ts', 'ms', 'request_method', 'request_resource', 'request_protocol', 'response_code', 'bytes_out', 'referrer', 'user_agent']
 
-class ApacheLog:
+class ApacheLog (object):
 	@staticmethod
 	def format(log):
 		''' given a log record in dict format, cleanses unneccessary parts and formats the record '''
