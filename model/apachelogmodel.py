@@ -177,7 +177,7 @@ class ApacheLogModel (object):
 		return fname
 
 	def store_experiment (self):
-		fname = 'output/exp_{}_{}.pkl'.format(self.modelname, dt.now().date())
+		fname = 'output/exp_{}_{}.txt'.format(self.modelname, dt.now().date())
 		exp = []
 		exp.extend ([('model name', self.modelname), 
 				('num topics', self.num_topics), 
