@@ -180,6 +180,7 @@ class ApacheLogModel (object):
 		fname = 'output/exp_{}_{}.txt'.format(self.modelname, dt.now().date())
 		exp = []
 		exp.extend ([('model name', self.modelname), 
+				('datetime', dt.now() )
 				('num topics', self.num_topics), 
 				('iterations', self.iterations), 
 				('dataset size', len(self.data)), 
