@@ -1,4 +1,4 @@
-# wslogs_topicmodeling
+# Network Logs Topic modeling
 anomaly detection in hosted website logs using topic models
 
 ## to run
