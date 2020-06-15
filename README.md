@@ -1,4 +1,4 @@
-# Network Logs Topic modeling
+# Anomaly Detection with Topic modeling on Network Logs
 anomaly detection in hosted website logs using topic models
 
 ## to run
